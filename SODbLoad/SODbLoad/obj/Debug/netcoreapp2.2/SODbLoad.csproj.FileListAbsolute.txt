@@ -1,0 +1,11 @@
+D:\BarryUWPProjects\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.deps.json
+D:\BarryUWPProjects\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.runtimeconfig.json
+D:\BarryUWPProjects\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.runtimeconfig.dev.json
+D:\BarryUWPProjects\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.dll
+D:\BarryUWPProjects\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.pdb
+D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.csprojAssemblyReference.cache
+D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.csproj.CoreCompileInputs.cache
+D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.AssemblyInfoInputs.cache
+D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.AssemblyInfo.cs
+D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.dll
+D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.pdb
