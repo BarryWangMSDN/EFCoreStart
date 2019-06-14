@@ -9,3 +9,14 @@ D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.AssemblyI
 D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.AssemblyInfo.cs
 D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.dll
 D:\BarryUWPProjects\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.pdb
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.deps.json
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.runtimeconfig.json
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.dll
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\bin\Debug\netcoreapp2.2\SODbLoad.pdb
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.dll
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.pdb
+C:\Users\Administrator\source\repos\DemoUsage\SODbLoad\SODbLoad\obj\Debug\netcoreapp2.2\SODbLoad.csprojAssemblyReference.cache
