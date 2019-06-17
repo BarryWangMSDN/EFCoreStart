@@ -27,12 +27,22 @@ namespace SODbLoad
             RootObject rootnodes = JsonConvert.DeserializeObject<RootObject>(responseBody);
             List<Item> items = new List<Item>();
             items = rootnodes.items;
+            using (var context = new SoDbContext())
+            {
+                foreach (Item item in items)
+                {
+                    context.Items.Add(item);
+                }
+                context.SaveChanges();
+            }
+
             //  DataTable testtable=jsonhelper.ToDataTable<Item>(items);
             //var msg = await stringTask;
             //Console.Write(msg);
+            //SqlException: Cannot insert explicit value for identity column in table 'Owners' when IDENTITY_INSERT is set to OFF.
         }
 
-       
+
 
         static void Main(string[] args)
         {

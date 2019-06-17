@@ -43,7 +43,7 @@ namespace SODbLoad.Migrations
                     last_edit_date = table.Column<int>(nullable: true),
                     closed_date = table.Column<int>(nullable: true),
                     closed_reason = table.Column<string>(nullable: true),
-                    TagCollection = table.Column<string>(nullable: true)
+                    tags = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

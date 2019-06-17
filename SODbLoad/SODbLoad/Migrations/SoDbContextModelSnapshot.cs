@@ -25,8 +25,6 @@ namespace SODbLoad.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("TagCollection");
-
                     b.Property<int>("answer_count");
 
                     b.Property<int?>("closed_date");
@@ -46,6 +44,8 @@ namespace SODbLoad.Migrations
                     b.Property<int?>("owneruser_id");
 
                     b.Property<int>("score");
+
+                    b.Property<string>("tags");
 
                     b.Property<string>("title");
 

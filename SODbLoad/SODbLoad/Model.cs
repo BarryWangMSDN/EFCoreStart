@@ -18,8 +18,10 @@ namespace SODbLoad
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Item>()
-            .Property<string>("TagCollection")
-            .HasField("_tags");
+           .Property(e => e.tags)
+           .HasConversion(
+                v => string.Join(',', v),
+                v => v.Split(',', StringSplitOptions.RemoveEmptyEntries));
         }
     }
 }

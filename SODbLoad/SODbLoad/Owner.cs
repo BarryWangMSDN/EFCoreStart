@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace SODbLoad
@@ -9,7 +10,6 @@ namespace SODbLoad
     {
         [Key]
         public int user_id { get; set; }
-
         public int reputation { get; set; }
         public string user_type { get; set; }
         public int accept_rate { get; set; }

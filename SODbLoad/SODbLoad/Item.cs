@@ -10,9 +10,6 @@ namespace SODbLoad
     {
         [Key]
         public int question_id { get; set; }
-
-        private static readonly char delimiter = ';';
-        private string _tags;
         public Owner owner { get; set; }
         public bool is_answered { get; set; }
         public int view_count { get; set; }
@@ -26,16 +23,8 @@ namespace SODbLoad
         public int? last_edit_date { get; set; }
         public int? closed_date { get; set; }
         public string closed_reason { get; set; }
-
-        [NotMapped]
-        public string[] tags
-        {
-            get { return _tags.Split(delimiter); }
-            set
-            {
-                _tags = string.Join($"{delimiter}", value);
-            }
-        }
+        public string[] tags { get; set; }
+       
 
     }
 }

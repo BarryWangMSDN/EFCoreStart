@@ -10,7 +10,7 @@ using SODbLoad;
 namespace SODbLoad.Migrations
 {
     [DbContext(typeof(SoDbContext))]
-    [Migration("20190614094135_InitialCreate")]
+    [Migration("20190617101033_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,8 +26,6 @@ namespace SODbLoad.Migrations
                     b.Property<int>("question_id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("TagCollection");
 
                     b.Property<int>("answer_count");
 
@@ -48,6 +46,8 @@ namespace SODbLoad.Migrations
                     b.Property<int?>("owneruser_id");
 
                     b.Property<int>("score");
+
+                    b.Property<string>("tags");
 
                     b.Property<string>("title");
 
