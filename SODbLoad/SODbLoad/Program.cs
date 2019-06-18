@@ -27,12 +27,15 @@ namespace SODbLoad
             RootObject rootnodes = JsonConvert.DeserializeObject<RootObject>(responseBody);
             List<Item> items = new List<Item>();
             items = rootnodes.items;
+
+
             using (var context = new SoDbContext())
-            {
-                foreach (Item item in items)
-                {
+            {        
+                    foreach (Item item in items)
+                    {
                     context.Items.Add(item);
-                }
+                  
+                    }
                 context.SaveChanges();
             }
 

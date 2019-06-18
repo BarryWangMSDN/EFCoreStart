@@ -22,6 +22,7 @@ namespace SODbLoad
            .HasConversion(
                 v => string.Join(',', v),
                 v => v.Split(',', StringSplitOptions.RemoveEmptyEntries));
+      
         }
     }
 }

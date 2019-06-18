@@ -9,6 +9,7 @@ namespace SODbLoad
     public class Item
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int question_id { get; set; }
         public Owner owner { get; set; }
         public bool is_answered { get; set; }

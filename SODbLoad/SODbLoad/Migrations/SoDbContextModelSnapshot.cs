@@ -21,9 +21,7 @@ namespace SODbLoad.Migrations
 
             modelBuilder.Entity("SODbLoad.Item", b =>
                 {
-                    b.Property<int>("question_id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("question_id");
 
                     b.Property<int>("answer_count");
 
@@ -60,9 +58,7 @@ namespace SODbLoad.Migrations
 
             modelBuilder.Entity("SODbLoad.Owner", b =>
                 {
-                    b.Property<int>("user_id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("user_id");
 
                     b.Property<int>("accept_rate");
 

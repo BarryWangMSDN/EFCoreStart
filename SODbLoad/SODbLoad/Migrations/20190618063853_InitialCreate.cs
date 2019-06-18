@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SODbLoad.Migrations
 {
@@ -11,8 +10,7 @@ namespace SODbLoad.Migrations
                 name: "Owners",
                 columns: table => new
                 {
-                    user_id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    user_id = table.Column<int>(nullable: false),
                     reputation = table.Column<int>(nullable: false),
                     user_type = table.Column<string>(nullable: true),
                     accept_rate = table.Column<int>(nullable: false),
@@ -29,8 +27,7 @@ namespace SODbLoad.Migrations
                 name: "Items",
                 columns: table => new
                 {
-                    question_id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    question_id = table.Column<int>(nullable: false),
                     owneruser_id = table.Column<int>(nullable: true),
                     is_answered = table.Column<bool>(nullable: false),
                     view_count = table.Column<int>(nullable: false),
