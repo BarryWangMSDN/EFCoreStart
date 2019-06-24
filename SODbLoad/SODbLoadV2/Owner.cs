@@ -11,6 +11,7 @@ namespace SODbLoadV2
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int user_id { get; set; }
+
         public int reputation { get; set; }
         public string user_type { get; set; }
         public int accept_rate { get; set; }
