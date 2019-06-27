@@ -9,7 +9,7 @@ namespace SODbLoadV2
     public class Answer
     {
         public List<Comment> comments { get; set; }
-
+        public Owner owner { get; set; }
         public int comment_count { get; set; }
         public bool is_accepted { get; set; }
         public int score { get; set; }

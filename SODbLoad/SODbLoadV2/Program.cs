@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -40,21 +41,37 @@ namespace SODbLoadV2
             {
                 foreach (Item item in finalitems)
                 {
-                    context.Items.Add(item);
-
-                }
+                    if (item.comment_count > 0)
+                    {
+                        foreach (Comment comment in item.comments)
+                        {
+                            context.Comments.Add(comment);                        
+                        }
+                    }
+                    if(item.answer_count>0)
+                    {
+                        foreach(Answer answer in item.answers)
+                        {
+                            context.Answers.Add(answer);
+                          
+                        }
+                    }
+                    context.Owners.Add(item.owner);     
+                    context.Items.Add(item);                   
+                }     
                 context.SaveChanges();
 
                 //DataTable testtable=jsonhelper.ToDataTable<Item>(items);
                 //var msg = await stringTask;
                 //Console.Write(msg);
                 //SqlException: Cannot insert explicit value for identity column in table 'Owners' when IDENTITY_INSERT is set to OFF.
+                //Problem: Actually EF cannot understand duplicate owners with the same id 
             }
         }
 
         public static async Task<List<Item>> getquestions(DateTime fromdate,DateTime todate,string order,string taggged,string filter)
         {
-            List<Item> items = new List<Item>();
+            List<Item> myitems = new List<Item>();
             int i = 1;
             DateTime utcTime1= DateTime.SpecifyKind(fromdate, DateTimeKind.Utc);
             DateTimeOffset utcTime2 = utcTime1;
@@ -77,7 +94,7 @@ namespace SODbLoadV2
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
             RootObject rootnodes = JsonConvert.DeserializeObject<RootObject>(responseBody);
-            items = rootnodes.items;
+            myitems = rootnodes.items;
             Console.WriteLine("100 items added!");
 
 
@@ -88,7 +105,7 @@ namespace SODbLoadV2
                 response.EnsureSuccessStatusCode();
                 responseBody = await response.Content.ReadAsStringAsync();
                 rootnodes = JsonConvert.DeserializeObject<RootObject>(responseBody);
-                items.AddRange(rootnodes.items);
+                myitems.AddRange(rootnodes.items);
                 Console.WriteLine("100 items added!");
                 if (rootnodes.has_more == false)
                     Console.WriteLine("loading finished");
@@ -96,7 +113,7 @@ namespace SODbLoadV2
             }
                 
                       
-            return items;
+            return myitems;
         }
 
       

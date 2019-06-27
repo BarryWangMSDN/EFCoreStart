@@ -11,6 +11,7 @@ namespace SODbLoadV2
         
         public List<Comment> comments { get; set; }
         public List<Answer> answers { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Owner owner { get; set; }
         public int comment_count { get; set; }
         public bool is_answered { get; set; }
