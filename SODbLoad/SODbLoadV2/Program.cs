@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -34,8 +36,9 @@ namespace SODbLoadV2
             //    }
             //    context.SaveChanges();
             //}
+            List<Owner> tempowners = new List<Owner>();
             DateTime datefrom = new DateTime(2019, 6, 1);
-            DateTime dateto = new DateTime(2019, 6, 30);
+            DateTime dateto = new DateTime(2019, 6, 30);           
             var finalitems = await getquestions(datefrom, dateto, "desc", "uwp", "!)slodkq_7Zpv(2HiW0R1");
             using (var context = new BasicModelContext())
             {
@@ -45,21 +48,33 @@ namespace SODbLoadV2
                     {
                         foreach (Comment comment in item.comments)
                         {
-                            context.Comments.Add(comment);                        
+                            context.Comments.Add(comment);
                         }
                     }
                     if(item.answer_count>0)
                     {
                         foreach(Answer answer in item.answers)
                         {
-                            context.Answers.Add(answer);
-                          
+                            context.Answers.Add(answer);                         
                         }
                     }
-                    context.Owners.Add(item.owner);     
+                    tempowners.Add(item.owner);     
                     context.Items.Add(item);                   
-                }     
-                context.SaveChanges();
+                }
+                //delete duplicate owner from collection
+                var test = tempowners.GroupBy(p => new { p.user_id })
+                    .Select(g => g.First())
+                    .ToList();
+
+                context.Owners.AddRange(test);
+                try
+                {
+                    context.SaveChanges();
+                }
+               catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
 
                 //DataTable testtable=jsonhelper.ToDataTable<Item>(items);
                 //var msg = await stringTask;
@@ -68,6 +83,8 @@ namespace SODbLoadV2
                 //Problem: Actually EF cannot understand duplicate owners with the same id 
             }
         }
+
+        
 
         public static async Task<List<Item>> getquestions(DateTime fromdate,DateTime todate,string order,string taggged,string filter)
         {

@@ -1,0 +1,2 @@
+﻿SELECT * FROM dbo.Owners
+WHERE USER_ID='1319802'

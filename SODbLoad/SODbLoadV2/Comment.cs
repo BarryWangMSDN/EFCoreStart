@@ -7,7 +7,7 @@ using System.Text;
 namespace SODbLoadV2
 {
     public class Comment
-    {       
+    {     
         public bool edited { get; set; }
         public int score { get; set; }
         public int creation_date { get; set; }
