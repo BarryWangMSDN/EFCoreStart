@@ -123,10 +123,12 @@ namespace SODbLoadV2
                 responseBody = await response.Content.ReadAsStringAsync();
                 rootnodes = JsonConvert.DeserializeObject<RootObject>(responseBody);
                 myitems.AddRange(rootnodes.items);
-                Console.WriteLine("100 items added!");
+                Console.WriteLine(rootnodes.items.Count.ToString()+" items added!");
                 if (rootnodes.has_more == false)
+                {
                     Console.WriteLine("loading finished");
                     break;
+                }               
             }
                 
                       
